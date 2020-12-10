@@ -18,8 +18,8 @@
     display:inline;
 }
 
-.pad-bottom{
-    padding-bottom: 1rem;
+.pad-vertically{
+    padding: 1rem 0;
 }
 
 .navbar-default .navbar-toggle {
@@ -124,4 +124,39 @@ hr{
 #image{
     padding-left: 1rem;
     display: inline;
+}
+
+.form{
+    width:33%;
+    margin:30px auto;
+}
+
+@media only screen and (max-width: 1024px){
+    .form{
+        width:40%;
+    }
+}
+
+@media only screen and (max-width: 854px){
+    .form{
+        width:50%;
+    }
+}
+
+@media only screen and (max-width: 426px){
+    .form{
+        width:60%;
+    }
+}
+
+@media only screen and (max-width: 348px){
+    .form{
+        width:70%;
+    }
+}
+
+@media only screen and (max-width: 290px){
+    .form{
+        width:80%;
+    }
 }

@@ -4,10 +4,10 @@
 	<div class="row">
 		<h1 style="text-align:center;">Add a new Comment to <%= campground.name%></h1>
 
-		<div style="width:33%; margin:30px auto">
+		<div class="form">
 			<form action="/campgrounds/<%= campground._id%>/comments" method="POST">
 				<div class="form-group">
-					<input class="form-control" type="text" name="comment[text]" placeholder="Text">
+					<textarea name="comment[text]" class="form-control" placeholder="Comment"  cols="30" rows="5"></textarea>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-lg btn-primary btn-block">Submit!</button>

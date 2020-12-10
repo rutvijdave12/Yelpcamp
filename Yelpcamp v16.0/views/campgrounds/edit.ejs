@@ -4,7 +4,7 @@
 	<div class="row">
 		<h1 style="text-align:center;">Edit <%= campground.name %></h1>
 
-		<div style="width:33%; margin:30px auto">
+		<div class="form">
 			<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div class="form-group">
 					<input class="form-control" type="text" name="campground[name]" value="<%=campground.name%>">
@@ -17,7 +17,7 @@
 					<input class="form-control" type="text" name="campground[location]" value="<%=campground.location%>">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" name="campground[description]" value="<%=campground.description%>">
+					<textarea name="campground[description]" class="form-control" placeholder="Description" cols="30" rows="5"><%=campground.description%></textarea>
 				</div>
 				<div class="form-group">
 					<input class="form-control" type="number" name="campground[price]" value="<%= campground.price %>" min="0.01" step="0.01">

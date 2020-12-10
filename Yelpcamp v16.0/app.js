@@ -20,8 +20,8 @@ var commentRoutes 		= require("./routes/comments"),
 
 
 var app = express();
-
-mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser:true,useUnifiedTopology:true});
+// mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser:true,useUnifiedTopology:true});
 mongoose.set('useFindAndModify', false);
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useCreateIndex', true);
@@ -92,7 +92,7 @@ but don't get through through meaning it cannot find our campground since out "/
 
 app.use("/users/:id", userRoutes);
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
 	console.log("Yelpcamp server has started!");
 });
 

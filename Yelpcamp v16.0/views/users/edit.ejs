@@ -4,7 +4,7 @@
 	<div class="row">
 		<h1 style="text-align:center;">Edit Profile</h1>
 
-		<div style="width:33%; margin:30px auto">
+		<div class="form">
 			<form action="/users/<%= user._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div class="form-group">
 					<input class="form-control" type="text" name="user[firstName]" value="<%=user.firstName%>" readonly>

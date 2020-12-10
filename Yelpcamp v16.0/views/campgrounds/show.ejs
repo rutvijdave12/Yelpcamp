@@ -43,7 +43,7 @@
                 </div>
                 <hr>
                 <% campground.comments.forEach(function(comment){ %>
-                    <div class="row pad-bottom">
+                    <div class="row pad-vertically">
                         <div class="col-md-12">
                             <strong><%=comment.author.username%></strong>
                             <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
