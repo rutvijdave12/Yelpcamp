@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>YelpCamp</title>
+		<link rel="icon" href="/images/campground.jpg" sizes="any" type="image/svg+xml">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+		<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+					<a class="navbar-brand" href="/"><i class="fas fa-campground"></i> YelpCamp</a>
+				</div>
+				<div class="collapse navbar-collapse" id="nav-collapse">
+					<ul class="nav navbar-nav">
+						<li class="<%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>"><a href="/campgrounds"><i class="fas fa-home"></i> Home</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<%if(!currentUser){%>
+							<li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login <i class="fas fa-user"></i></a></li>
+							<li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up <i class="fas fa-user-plus"></i></a></li>
+						<%} else {%>
+							<li class="sign-in">
+								<span class="dropdown">
+									<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span><i class="fas fa-user-circle"></i> Signed in as <%= currentUser.username%></span>
+										<i class="fas fa-caret-down" style="border: transparent; "></i>
+									</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									  <div class="text-center items">
+										<a class="dropdown-item" href="/users/<%= currentUser._id %>">View Profile</a>
+									  </div>
+									  <hr>
+									  <div class="text-center items">
+										<a class="dropdown-item" href="/users/<%= currentUser._id  %>/edit">Edit Profile</a>
+									  </div>
+									</div>
+								</span>
+							</li>
+							<li><a href="/logout">Log out <i class="fas fa-sign-out-alt"></i></a></li>
+						<% } %> 		
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="container">
+			<% if(error && error.length > 0){ %> <!-- error is empty it is an empty error and it is not falsy so we need too check both if error and error.length > 0(length of error array) is present -->
+				<div class="alert alert-danger"><%= error %></div>
+				<!-- Whenever the flash message occurs our message variable will contain it
+				and then we can print it in here.
+				When there is no flash message the message variable will be empty, so we won't see any message -->
+			<% } %>
+			<% if(success && success.length >0){ %>
+				<div class="alert alert-success"><%= success %></div>
+			<% } %>
+		</div>
+
+

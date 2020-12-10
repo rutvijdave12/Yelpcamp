@@ -1,0 +1,46 @@
+<%- include("../partials/header") %>
+
+<div class="container" style="padding-bottom: 3rem;">
+    <h1 class="text-center">
+        <%= user.firstName[0].toUpperCase() + user.firstName.slice(1) +
+         ' ' +
+         user.lastName[0].toUpperCase() + user.lastName.slice(1)%>'s Profile
+    </h1>
+    <div class="row" style="margin-top: 4rem;">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="<%= user.userPic%>" class="" alt="User profile pic">
+            </div>
+            <h4 class="caption">Username: <%= user.username %></h4>
+            <h4 class="caption">Bio: <%= user.bio !== null ? user.bio : "..." %></h4>
+            <h4 class="caption"> Email id: <a href="mailto:<%= user.email %>"><%= user.email %></a></h4>
+        </div>
+        <div class="col-md-8">
+            <h2 class="text-center" style="margin-top: 0;">Posts</h2>
+            <div class="container" style="width:100%;margin-top: 4rem;">
+                <% if(campgrounds.length){ %>
+                    <% campgrounds.forEach(function(campground){ %>
+                        <div class="row">
+                            <a href="/campgrounds/<%=campground._id%>">
+                                <div class="thumbnail col-xs-2"><img src="<%= campground.image %>" style="height: 100%; width: 100%;"></div>
+                            </a>
+                            <div class="col-xs-10">
+                                <a href="/campgrounds/<%=campground._id%>">
+                                    <h4><%= campground.name %></h4>
+                                    <h4><%= campground.location %></h4>
+                                </a>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else{ %>
+                        <h1 class="text-center">No posts yet</h1>
+                <% } %>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
+
+

@@ -1,0 +1,127 @@
+.html{
+    overflow-x: hidden;
+}
+
+.thumbnail img{
+    width:100%;
+}
+
+.thumbnail{
+    padding: 0 ;
+}
+
+.thumbnail .caption-full{
+    padding: 9px;
+}
+
+.delete-form{
+    display:inline;
+}
+
+.pad-bottom{
+    padding-bottom: 1rem;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.row .col-md-3{
+    margin-bottom: 30px;
+}
+
+.campground-name{
+    padding-bottom: 1rem;
+}
+
+#map:focus{
+    border:transparent;
+}
+
+.description{
+    padding-top: 1rem;
+}
+
+.location{
+    color: #337ab7;
+    text-decoration: underline;
+}
+
+.user-contacts li{
+    list-style: none;
+}
+
+.sign-in{
+    height: 50px;
+    display: flex !important;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.sign-in .dropdown{
+    padding-left: 0.5rem;
+
+}
+
+.sign-in button{
+    padding: 0;
+    background:transparent;
+}
+
+hr{
+    margin: 0;
+}
+
+.dropdown-item{
+    color:#000;
+}
+
+.dropdown-item:hover{
+    color:#000;
+    text-decoration: none;
+}
+
+.items{
+    padding:5px 0;
+}
+
+.items:hover{
+    background: #e7e7e7;
+}
+
+.dropdown-menu{
+    padding:0;
+}
+
+.dropdown .btn.active{
+    background: transparent;
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: 0px auto transparent;
+}
+
+.search-container form{
+    width:60%;
+}
+
+@media only screen and (max-width: 600px) {
+    .search-container form{
+        width:80%;
+    }
+
+}
+
+#image{
+    padding-left: 1rem;
+    display: inline;
+}
