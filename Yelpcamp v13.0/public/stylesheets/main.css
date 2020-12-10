@@ -1,0 +1,27 @@
+.thumbnail img{
+    width:100%;
+}
+
+.thumbnail{
+    padding: 0 ;
+}
+
+.thumbnail .caption-full{
+    padding: 9px;
+}
+
+.delete-form{
+    display:inline;
+}
+
+.pad-bottom{
+    padding-bottom: 1rem;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
